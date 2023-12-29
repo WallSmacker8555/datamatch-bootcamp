@@ -4,6 +4,7 @@ import App from './App';
 
 import { Provider } from 'react-redux';
 import firebase from 'firebase/app';
+import 'firebase/database';
 import { createStore, combineReducers } from 'redux';
 import {
   ReactReduxFirebaseProvider,
