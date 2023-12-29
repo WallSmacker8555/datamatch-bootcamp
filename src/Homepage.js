@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { firebaseConnect, isLoaded, isEmpty } from 'react-redux-firebase';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+import './Homepage.css';
 
 class Homepage extends React.Component {
 
@@ -32,19 +33,21 @@ class Homepage extends React.Component {
             const deck = this.props.decks[deckId];
             return (
                 <div key={deckId}>
-                    <Link to={`/viewer/${deckId}`}>{deck.name}</Link>
+                    <Link className='deckName' to={`/viewer/${deckId}`}>{deck.name}</Link>
                 </div>
             )
         });
 
         return (
-            <>
+            <div>
                 <h2>Homepage</h2>
-                <Link to="/editor">Creat new deck</Link>
+                <Link className='deckName'to="/editor">Creat new deck</Link>
                 <br/>
                 <h3>Available Decks</h3>
-                {decks}
-            </>
+                <div className='deckList'>
+                    {decks}
+                </div>
+            </div>
         );
     };
 
